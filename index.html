@@ -1,0 +1,103 @@
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <script language="javascript" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.6.0/p5.min.js"></script>
+  <script language="javascript" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.6.0/addons/p5.dom.min.js"></script>
+  <script language="javascript" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.3/Chart.bundle.js"></script>
+  <script language="javascript" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjs/5.3.1/math.js"></script>
+  <!--<script src="https://wagenaartje.github.io/neataptic/cdn/1.4.7/neataptic.js"></script> -->
+  <script language="javascript" type="text/javascript" src="lib/neataptic.js"></script>
+  <script language="javascript" type="text/javascript" src="lib/nn.js"></script>
+  <script language="javascript" type="text/javascript" src="lib/matrix.js"></script>
+  <script language="javascript" type="text/javascript" src="Sketch.js"></script>
+  <script language="javascript" type="text/javascript" src="Snake.js"></script>
+  <script language="javascript" type="text/javascript" src="Player.js"></script>
+  <script language="javascript" type="text/javascript" src="Fruit.js"></script>
+  <script language="javascript" type="text/javascript" src="ga.js"></script>
+  <script language="javascript" type="text/javascript" src="Era.js"></script>
+  <script language="javascript" type="text/javascript" src="ChartTools.js"></script>
+</head>
+
+<body>
+  <div>
+    <div id="canvascontainer" style="float : left; width: 500"></div>
+    <div id="ExtrasDiv" style="float : left; margin: 10px">
+      <div id="SettingsDiv" style="float: left; margin:5px">
+        <h2>Settings</h2>
+        <p>
+          population size: <input id="populationSlider" type="range" min="50" max="2000" value="1000" step="50"> <span
+            id="population">100</span>
+        </p>
+        <p>
+          speed: <input id="speedSlider" type="range" min="1" max="50" value="1"> <span id="speed">1</span>
+        </p>
+        <p>
+          <button id="btnKillCurGen">kill them all</button>
+          <button id="btnSwitchCanvas">hide Game</button>
+        </p>
+        <p>
+          <button id="btnSaveBest">Download best individual so far</button>
+        </p>
+        <div>
+          <button id="loadChamp">load Champ</button>          
+        </div>
+        <p>
+          <button id="btnSwitchMode">loop instead of evolving</button>
+        </p>
+        <h3>Chart Settings</h3>
+        <p>
+          <button id="btnSwitchChart">hide Chart</button>
+        </p>
+        <p>
+          <input id="myInput" type="text">
+
+          <button id=btnAddChart>Add</button>
+          <button id=btnRemoveChart>Remove</button>
+        </p>
+        <p>
+          <button id=btnSaveCSV>Load CSV Data</button>
+          <input type="Checkbox" id="chkBxAutoSave" name="chkBxAutoSave"> Save CSV every 500 generations <br>
+        </p>
+      </div> <!-- Close SettingsDiv-->
+      <div id="InfosDiv" style="float: left; margin:5px">
+        <h2>Infos</h2>
+        <p id="GenerationsCounter">Gen NR =</p>
+        <table>
+          <tr>
+            <th></th>
+            <th>self</th>
+            <th>starved</th>
+            <th>wall</th>
+          </tr>
+          <tr>
+            <th>curGen</th>
+            <th id="table_cgs">0</th>
+            <th id="table_cgm">0</th>
+            <th id="table_cgw">0</th>
+          </tr>
+          <tr>
+            <th>total</th>
+            <th id="table_ts">0</th>
+            <th id="table_tm">0</th>
+            <th id="table_tw">0</th>
+          </tr>
+          <tr>
+            <th>total in %</th>
+            <th id="table_trs">0</th>
+            <th id="table_trm">0</th>
+            <th id="table_trw">0</th>
+          </tr>
+        </table>
+
+      </div> <!-- Close InfoDiv-->
+    </div> <!-- Close ExtrasDiv-->
+
+    <div id="myChartDiv">
+      <canvas id="myChart" width="80" height="20" aria-label="Hello ARIA World" role="img"></canvas>
+    </div>
+  </div>
+
+</body>
+
+</html>
