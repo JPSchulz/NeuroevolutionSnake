@@ -147,8 +147,11 @@ function draw() {
     }
     checkGameStatus();
   }
+  let mydiv = select('#canvascontainer');
+  if (!mydiv.elt.hidden) {
   for (let index = 0; index < allPlayers.length; index++) {
     allPlayers[index].show();
+  }
   }
 }
 
