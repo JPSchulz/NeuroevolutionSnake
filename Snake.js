@@ -42,9 +42,28 @@ class Snake {
 
   show() {
     if (this.alive) {
-      for (var i = 0; i < this.numSegments - 1; i++) {
+      let start ={x: this.xCor[0], y : this.yCor[0]};
+      let end ={x:0, y:0};
+      for (var i = 1; i < this.numSegments - 1; i++) {
+        if(this.xCor[i]==start.x){
+          while(this.xCor[i+1]==start.x && i+1<this.numSegments-1){
+            i++;
+          }
+          end.x=this.xCor[i];
+          end.y=this.yCor[i];
+        } else{
+          if(this.yCor[i]==start.y){
+            while(this.yCor[i+1]==start.y && i+1<this.numSegments-1){
+              i++;
+            }
+            end.x=this.xCor[i];
+            end.y=this.yCor[i];
+          }
+        }
         stroke(255, 50);
-        line(this.xCor[i], this.yCor[i], this.xCor[i + 1], this.yCor[i + 1]);
+        line(start.x,start.y,end.x,end.y);
+        start.x=end.x;
+        start.y=end.y;
       }
     }
   }
