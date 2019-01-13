@@ -353,6 +353,7 @@ function loaded(evt) {
 function loadChamp(){
   let brain = NeuralNetwork.deserialize(champ);
   params.snakeMovesToLive =50;
+  params.snakeMovesPerApple=30;
   createPopulationFromPlayer(brain);
 }
 
