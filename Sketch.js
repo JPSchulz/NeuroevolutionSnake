@@ -28,7 +28,7 @@ var params = {
   autoSave: true,
   snakeXPos:10,
   snakeYPos:10,
-  snakeMovesToLive:5,
+  snakeMovesToLive:10,
   snakeMovesPerApple:5
 };
 
@@ -352,6 +352,7 @@ function loaded(evt) {
 
 function loadChamp(){
   let brain = NeuralNetwork.deserialize(champ);
+  params.snakeMovesToLive =50;
   createPopulationFromPlayer(brain);
 }
 

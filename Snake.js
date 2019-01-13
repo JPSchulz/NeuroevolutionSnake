@@ -205,7 +205,7 @@ class Snake {
       this.SegmentsLeft += params.newSegments;
       if (stats.maxFruits >= allFruits.length - 1) allFruits.push(new Fruit());
       this.newFruit(allFruits);
-      this.movesToLive += this.movesPerApple;
+      this.movesToLive += this.movesPerApple + floor(this.NumberOfFruits/2);
     }
   }
 
